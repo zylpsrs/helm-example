@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello
+    version: v1.0
+  name: hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+      version: v1.0
+  template:
+    metadata:
+      labels:
+        app: hello
+        version: v1.0
+    spec:
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/zylpsrs/example/hello
+        imagePullPolicy: IfNotPresent
+        name: hello
+        ports:
+        - name: web
+          containerPort: 9080
+          protocol: TCP
+        env:
+        - name: GREETER
+          value: 'http://greeter:9080'

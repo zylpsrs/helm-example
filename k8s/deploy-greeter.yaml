@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: greeter
+    version: v1.0
+  name: greeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeter
+      version: v1.0
+  template:
+    metadata:
+      labels:
+        app: greeter
+        version: v1.0
+    spec:
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/zylpsrs/example/greeter
+        imagePullPolicy: IfNotPresent
+        name: greeter
+        ports:
+        - name: web
+          containerPort: 9080
+          protocol: TCP
