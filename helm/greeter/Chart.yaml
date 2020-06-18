@@ -1,0 +1,16 @@
+apiVersion: v2
+name: greeter
+description: Receive messages from http and return welcome message
+type: application
+version: 0.1.0
+appVersion: 1.0.0
+maintainers:
+- email: zylpsrs@sina.cn
+  name: Yanlin. Zhou
+sources:
+- https://github.com/zylpsrs/helm-example.git
+keywords:
+- helm
+- deployment
+#home: https://github.com/zylpsrs/helm-example
+#icon:

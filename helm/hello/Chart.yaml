@@ -1,0 +1,24 @@
+apiVersion: v2
+name: hello
+description: Receive messages from http and return welcome message, Depend on Greeter
+type: application
+version: 0.1.0
+appVersion: 1.0.0
+maintainers:
+- email: zylpsrs@sina.cn
+  name: Yanlin. Zhou
+sources:
+- https://github.com/zylpsrs/helm-example.git
+keywords:
+- helm
+- deployment
+#home: https://github.com/zylpsrs/helm-example
+#icon:
+
+dependencies:
+- name: greeter
+  version: 0.x.x
+  repository: http://chartmuseum.app.zyl.io
+  condition: greerer.enabled
+  tags:
+    - http
